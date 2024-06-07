@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function addMonthsToDate(dateStr, months) {
+    // Tách ngày, tháng, năm từ chuỗi đầu vào
+    var parts = dateStr.split("/");
+    var day = parseInt(parts[0], 10);
+    var month = parseInt(parts[1], 10) - 1; // Tháng trong đối tượng Date bắt đầu từ 0
+    var year = parseInt(parts[2], 10);
+
+    // Tạo đối tượng Date từ các phần đã tách
+    var date = new Date(year, month, day);
+
+    // Cộng thêm số tháng
+    var newDate = new Date(date.setMonth(date.getMonth() + months));
+
+    // Kiểm tra và điều chỉnh ngày nếu cần thiết
+    if (newDate.getDate() !== day) {
+        newDate.setDate(0); // Lùi lại một ngày nếu vượt quá số ngày trong tháng mới
+    }
+
+    // Trả về chuỗi ngày mới dưới dạng dd/mm/yyyy
+    var newDay = newDate.getDate().toString().padStart(2, '0');
+    var newMonth = (newDate.getMonth() + 1).toString().padStart(2, '0');
+    var newYear = newDate.getFullYear();
+
+    return `${newDay}/${newMonth}/${newYear}`;
+}
+    console.log(addMonthsToDate('04/02/2003',3))
+    </script>
+</body>
+</html>

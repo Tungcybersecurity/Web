@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dangkyhopdong</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/dangkyhopdong/dangkyhopdong.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body onload="timTram()"> 
+   <style>
+    body{
+        background-color: #3bdaa5;
+    }
+    .product-container {
+      position: relative;
+      overflow: hidden;
+      max-width: 300px; /* Điều chỉnh kích thước tối đa của thẻ */
+      height: 300px;
+    }
+    .product-img {
+      width: 100%;
+      height: 250px; /* Chiều cao sản phẩm */
+      object-fit: cover; /* Đảm bảo hình ảnh không bị vùi mất */
+    }
+    .product-button {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Độ mờ của nền */
+      color: white;
+      padding: 10px 0; /* Khoảng cách giữa nút và biên */
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    .product-container:hover .product-button {
+      background-color: rgba(0, 0, 0, 0.8); /* Độ mờ của nền khi rê chuột vào */
+    }
+ 
+    .cell {
+      border: 1px solid #333;
+      color: #333;
+      text-align: center;
+     display: flex;
+     background: #fff;
+     padding: 0;
+    }
+    .cell p{
+      margin: auto;
+      height: 100%;
+      width: 100%;
+      line-height: 100px;
+      padding: 0;
+    }
+    .abc{
+      height: 100px;
+      
+    }
+
+   </style>
+<div class="container-fluid text-light col-11">
+  <div class="row ">
+    <div class="col-md-3">
+      <img src="/img/Screenshot 2024-05-25 142336.png" alt="Logo" class="img-fluid p-3">
+    </div>
+    <div class="col-md-7 text-right">
+      <nav class="navbar navbar-expand-lg navbar-dark mt-3">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="/home/home.html">Về chúng tôi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="/tinhtranghopdong/tinhtranghopdong.html">Hợp đồng</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="/thongtincon/thongtincon.html">Thông tin con</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="#">Hướng dẫn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="/thongtinphuhuynh/thongtinphuhuynh.html">Thông tin cá nhân</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="/login/login.html">Đăng xuất</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    
+
+
+
+    <div class="profile">
+      <div class="profile__profile profile__profile2">
+          <div class="profile__profile-row ">
+              <h5>Thông tin</h5>
+              
+              <form class="needs-validation" novalidate>
+                  <div class="form-row">
+                      <div class="col-md-6 mb-3">
+                          <label for="validationCustom01">Tên học sinh</label>
+                          <select class="form-control" id="validationCustomten" onchange="setJson()" >
+                            
+                              <!-- <option>Nguyễn Huy Tùng</option> -->
+                              <!-- Add more options here if needed -->
+                          </select>
+                          <div class="valid-feedback">
+            
+                          </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                          
+                      </div>
+                  </div>
+                  <div class="form-row">
+                      <div class="col-md-6 mb-3">
+                          <label for="validationCustom05">Phường đón</label>
+                          <select class="form-control" id="validationCustomphuong" onchange="setJson()" required>
+                              <option >Phường Hiệp Phú</option>
+                              <option >Phường Phước Long B</option>
+                              <option >Phường Tăng Nhơn Phú A</option>
+                              <option >Phường Tân Phú</option>
+                              <option >Phường Phước Long A</option>
+                              <option >Phường Trường Thạnh</option>
+                              <option >Phường Phú Hữu</option>
+                              <option >Phường Long Bình</option>
+                              <option >Phường Long Thạnh Mỹ</option>
+                              <option >Phường Phước Bình</option>
+                              <option >Phường Tăng Nhơn Phú B</option>
+                              <option >Phường Phước Long A</option>
+                              <!-- Add more options here if needed -->
+                          </select>
+                          <div class="invalid-feedback">
+                             
+                          </div>
+                      </div>
+                      
+  
+                      <div class="col-md-6 mb-3">
+                          <label for="validationCustom05">Trạm đón</label>
+                          <select class="form-control" id="validationCustomTramDon" onchange="setJson()" required>
+                            <option >Học viện Công nghệ BCVT_Tp.HCM</option>
+                            <option >Đại học HUTECH</option>
+                            <option >Bệnh viện Quân Dân Y Miền Đông</option>
+                            <option >Chùa Bửu Long</option>
+                            <option >Công viên lịch sử Văn hóa Dân tộc</option>
+                            <option >Trường Đại học Luật</option>
+                            <option >Chợ Long Phước</option>
+                            <option >Trạm Y tế phường Long Thạnh Mỹ</option>
+                            <option >Trường Đại học FPT</option>
+                            <option >Sân cầu lông Lê Đức Sport</option>
+                            <option >Villa park</option>
+                            <option >Cao đẳng Kỹ Nghệ II</option>
+                            <option >Cao đẳng Kinh Tế Đối Ngoại</option>
+                            <option >Trường tư thục Ngô Thời Nhiệm</option>
+                            <option >Sân bóng đá Bắc Rạch Chiếc</option>
+                            <option >Cao đẳng Công Thương</option>
+                            <option >Suối tiên</option>
+                            <option >Bệnh viện Đa khoa Lê Văn Việt</option>
+                            <option >Trường THCS Hoa Lư</option>
+                            <option >The Stay Saigon Riverfront</option>
+                          </select>
+                          <div class="invalid-feedback">
+                              
+                          </div>
+                      </div>
+  
+                      <div class="col-md-12 mb-3">
+                          <label for="validationCustom05">Trường đến</label>
+                          <select class="form-control" id="validationCustomTruong" onchange="setJson()" required>
+                              <option >Trường tiểu học Lê Văn Việt</option>
+                              <option >Trường tiểu học Võ Văn Hát</option>
+                              <option >Trường tiểu học Trương Văn Thành</option>
+                              <option >Trường tiểu học Hiệp Phú</option>
+                              <option >Trường tiểu học Tân Phú</option>
+                              <option >Trường tiểu học Phước Long A</option>
+                              <option >Trường tiểu học Trường Thạnh</option>
+                              <!-- Add more options here if needed -->
+                          </select>
+                          <div class="invalid-feedback">
+                            
+                          </div>
+                      </div>
+  
+                      <div class="col-md-2 mb-3">
+                          <label for="validationCustom05">Chọn số tháng đăng ký</label>
+                          <select class="form-control" id="validationCustomHan" onchange="setJson()" required>
+                              <option >1 tháng</option>
+                              <option >3 tháng</option>
+                              <option >6 tháng</option>
+                              <!-- Add more options here if needed -->
+                          </select>
+                          
+                      </div>
+                    
+                  </div>
+                  
+             
+                  <div class="đuadon">
+                      
+                      <h1>Chọn buổi đưa đón</h1>
+
+                      <div class="tables">
+                        <div class="tables__group" id ="2">
+                          <div class="p" style="background: none; width: 10%; border:0">Thứ 2:</div>
+                          <div class="p" onclick="doimau(this,'2')" value ="2">Sáng </div>
+                          <div class="p" onclick="doimau(this,'2')" value ="2">Chiều</div>
+                          <div class="p" onclick="doimau(this,'2')" value ="2">Cả ngày</div>
+
+                        </div>
+
+                        <div class="tables__group" id ="3">
+                          <div class="p" style="background: none; width:10%; border:0">Thứ 3:</div>
+                          <div class="p" onclick="doimau(this,'3')" value ="3">Sáng </div>
+                          <div class="p" onclick="doimau(this,'3')" value ="3">Chiều</div>
+                          <div class="p" onclick="doimau(this,'3')" value ="3">Cả ngày</div>
+
+                        </div>
+                        <div class="tables__group" id ="4">
+                          <div class="p" style="background: none; width:10%; border:0">Thứ 4:</div>
+                          <div class="p" onclick="doimau(this,'4')" value ="4">Sáng </div>
+                          <div class="p" onclick="doimau(this,'4')" value ="4">Chiều</div>
+                          <div class="p" onclick="doimau(this,'4')" value ="4">Cả ngày</div>
+
+                        </div>
+                        <div class="tables__group" id ="5">
+                          <div class="p" style="background: none; width:10%; border:0">Thứ 5:</div>
+                          <div class="p" onclick="doimau(this,'5')" value ="5">Sáng </div>
+                          <div class="p" onclick="doimau(this,'5')" value ="5">Chiều</div>
+                          <div class="p" onclick="doimau(this,'5')" value ="5">Cả ngày</div>
+
+                        </div>
+                        <div class="tables__group" id ="6">
+                          <div class="p" style="background: none; width:10%; border:0">Thứ 6:</div>
+                          <div class="p" onclick="doimau(this,'6')" value ="6">Sáng </div>
+                          <div class="p" onclick="doimau(this,'6')" value ="6">Chiều</div>
+                          <div class="p" onclick="doimau(this,'6')" value ="6">Cả ngày</div>
+
+                        </div>
+                        <div class="tables__group" id ="7">
+                          <div class="p" style="background: none; width:10%; border:0">Thứ 7:</div>
+                          <div class="p" onclick="doimau(this,'7')" value ="7">Sáng </div>
+                          <div class="p" onclick="doimau(this,'7')" value ="7">Chiều</div>
+                          <div class="p" onclick="doimau(this,'7')" value ="7">Cả ngày</div>
+
+                        </div>
+                        <div class="button" style="margin-left: -1px;" onclick="xoahetmau()">Refersh</div>
+                        <div class="button" style="margin-top: -1px;" onclick="sendForm()">Đăng ký</div>
+
+
+                      </div>
+                 </div>
+
+
+              </form>
+              
+              <script>
+              // Example starter JavaScript for disabling form submissions if there are invalid fields
+              (function() {
+                  'use strict';
+                  window.addEventListener('load', function() {
+                      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                      var forms = document.getElementsByClassName('needs-validation');
+                      // Loop over them and prevent submission
+                      var validation = Array.prototype.filter.call(forms, function(form) {
+                          form.addEventListener('submit', function(event) {
+                              if (form.checkValidity() === false) {
+                                  event.preventDefault();
+                                  event.stopPropagation();
+                              }
+                              form.classList.add('was-validated');
+                          }, false);
+                      });
+                  }, false);
+              })();
+              </script>
+          </div>
+      </div>
+  </div>
+  
+
+    
+
+  </div>
+</div>
+<script src="./app.js"></script>
+<script src="./timTramGannhat.js"></script>
+<script src="./doimau.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

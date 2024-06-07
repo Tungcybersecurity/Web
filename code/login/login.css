@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.login{
+    height: 100vh;
+    width: 100%;
+    background-color: #3bdaa5;
+    display: flex;
+}
+.login__form{
+    height: 60%;
+    width: 40%;
+    margin: auto;
+    /* background-color: red; */
+}
+.login__form h1{
+    margin: auto;
+    text-align: center;
+    color: white;
+    margin-bottom: 7%;
+    padding-left: 50px;
+}
+.login__form-input{
+    height: 10%;
+    width: 100%;
+    /* background: springgreen; */
+    display: flex;
+    margin-top: 4%;
+  
+}
+.login__form-input label{
+    margin: auto;
+    color: white;
+
+
+}
+.login__form-input input{
+    width: 70%;
+    margin: auto;
+    height: 100%;
+    outline: none;
+    border-radius: 30px;
+    border: none;
+    background: #d8d5d5;
+    padding-left: 20px;
+
+}
+.login__form-quenmk{
+
+    width: 100%;
+   display: flex;
+   color: white;
+   /* margin-left: 50px; */
+   margin-top: 5px;
+
+
+    
+}
+.login__form-quenmk-one{
+    height: 100px;
+    width: 15%;
+    /* background: rgb(0, 81, 255); */
+    
+
+}
+.login___pass{
+    height: 30px;
+    width: 130px;
+    /* background: skyblue; */
+    text-align: center;
+    border-radius: 30px;
+    height: 40px;
+    line-height: 40px;
+    text-decoration:underline;
+    margin: auto;
+    margin-top: 3%;
+    cursor: pointer;
+    
+}
+.login___pass:hover {
+    background-color: #a9a9a9; /* Màu nền khi hover */
+    color: white; /* Màu chữ khi hover */
+}
+.login__form-quenmk-one2{
+    width: 85%; 
+}
+.login___pass2{
+    margin-top: 5%;
+    width: 160px;
+    background: #d8d5d5;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.login___pass1{
+    margin-bottom: 5%;
+    background: #d8d5d5;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}

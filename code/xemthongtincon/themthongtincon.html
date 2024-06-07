@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>xemthongtincon</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/xemthongtincon/themthongtincon.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+   <style>
+    body{
+        background-color: #3bdaa5;
+    }
+    .product-container {
+      position: relative;
+      overflow: hidden;
+      max-width: 300px; /* Điều chỉnh kích thước tối đa của thẻ */
+      height: 300px;
+    }
+    .product-img {
+      width: 100%;
+      height: 250px; /* Chiều cao sản phẩm */
+      object-fit: cover; /* Đảm bảo hình ảnh không bị vùi mất */
+    }
+    .product-button {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Độ mờ của nền */
+      color: white;
+      padding: 10px 0; /* Khoảng cách giữa nút và biên */
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    .product-container:hover .product-button {
+      background-color: rgba(0, 0, 0, 0.8); /* Độ mờ của nền khi rê chuột vào */
+    }
+ 
+    .cell {
+      border: 1px solid #333;
+      color: #333;
+      text-align: center;
+     display: flex;
+     background: #fff;
+     padding: 0;
+    }
+    .cell p{
+      margin: auto;
+      height: 100%;
+      width: 100%;
+      line-height: 100px;
+      padding: 0;
+    }
+    .abc{
+      height: 100px;
+      
+    }
+
+   </style>
+<div class="container-fluid text-light col-11">
+  <div class="row ">
+    <div class="col-md-3">
+      <img src="/img/Screenshot 2024-05-25 142336.png" alt="Logo" class="img-fluid p-3">
+    </div>
+    <div class="col-md-7 text-right">
+      <nav class="navbar navbar-expand-lg navbar-dark mt-3">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="/home/home.html">Về chúng tôi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="/tinhtranghopdong/tinhtranghopdong.html">Hợp đồng</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="/thongtincon/thongtincon.html">Thông tin con</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="#">Hướng dẫn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="/thongtinphuhuynh/thongtinphuhuynh.html">Thông tin cá nhân</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="/login/login.html">Đăng xuất</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    
+    
+
+    <div class="profile">
+        <div class="profile__profile">
+            <div class="profile__profile-row profile__profile-row1">
+                <h5>Thông tin cá nhân</h5>
+                <div class="profile__profile-row-img">
+                    <img src="/img/profile.png" alt="" id="imagePerson">
+                  
+                </div>
+                <input type="file" name="file" id="file" class="inputfile" />
+                <label for="file">Cập nhật hình ảnh</label>
+            </div>
+        </div>
+        <div class="profile__profile profile__profile2">
+            <div class="profile__profile-row ">
+                <h5>Thông tin</h5>
+                
+                <div class="profile__profile-row-con ">
+                    <div class="profile__profile-row-con-con">
+                        <div class="profile__profile-row-con-con-group">
+                            <p>Họ</p>
+                            <input type="text" id="ho">
+                        </div>
+                        <br>
+                        <div class="profile__profile-row-con-con-group">
+                            <p>Giới tính</p>
+                            <input type="text" id="gioitinh">
+                        </div>
+                        <br>
+                        <div class="profile__profile-row-con-con-group">
+                            <p>Lớp</p>
+                            <input type="text" id="lop">
+                        </div>
+                        
+                    </div>
+                    <div class="profile__profile-row-con-con">
+                      <div class="profile__profile-row-con-con-group">
+                          <p>Tên</p>
+                          <input type="text" id="ten">
+                      </div>
+                      <br>
+                      <div class="profile__profile-row-con-con-group">
+                          <p>Ngày sinh</p>
+                          <input type="text" id="ngaysinh">
+                      </div>
+                      <br>
+                      <div class="profile__profile-row-con-con-group">
+                          <p>Trường</p>
+                          <input type="text" id="truong">
+                      </div>
+                      
+                  </div>
+f
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="button" onclick="luu()">Lưu</div>
+    <div class="cha col-12" style=" padding-bottom: 50px;">
+      <div class="container col-12 px-0 " style="padding-top: 50px !important">
+          <div class="schedule-wrapper" style="padding-left: 50px; padding-right: 50px; background-color: #72f3c8; border-radius: 20px;">
+              <h1>Lịch đi theo tuần</h1>
+              <div class="row ">
+                  <div class="col">
+                      <div class="row abc">
+                          <div class="col cell"></div>
+                          <div class="col cell"><p>Thứ 2</p></div>
+                          <div class="col cell"><p>Thứ 3</p></div>
+                          <div class="col cell"><p>Thứ 4</p></div>
+                          <div class="col cell"><p>Thứ 5</p></div>
+                          <div class="col cell"><p>Thứ 6</p></div>
+                          <div class="col cell"><p>Thứ 7</p></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col" id="buoisang">
+                      <div class="row abc" >
+                        <div class="col cell"><p>Sáng</p></div>
+                        <div class="col cell" id="T2-Sáng" value="2"><p>7:00 - 11:00</p></div>
+                        <div class="col cell" id="T3-Sáng"><p class="green" value="3">7:00 - 11:00</p></div>
+                        <div class="col cell" id="T4-Sáng"><p class="green" value ="4">7:00 - 11:00</p></div>
+                        <div class="col cell" id="T5-Sáng" value="5"><p>7:00 - 11:00</p></div>
+                        <div class="col cell" id="T6-Sáng" value ="6"><p class="green">7:00 - 11:00</p></div>
+                        <div class="col cell" id="T7-Sáng" value ="7"><p>7:00 - 11:00</p></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row ">
+                  <div class="col" id="buoichieu">
+                      <div class="row abc">
+                        <div class="col cell"><p>Chiều</p></div>
+                        <div class="col cell" id="T2-Chiều" value="2"><p class="green">13:00 - 16:00</p></div>
+                        <div class="col cell" id="T3-Chiều" value="3"><p>13:00 - 16:00</p></div>
+                        <div class="col cell" id="T4-Chiều" value="4"></div>
+                        <div class="col cell" id="T5-Chiều" value="5"><p class="green">13:00 - 16:00</p></div>
+                        <div class="col cell" id="T6-Chiều" value="6"></div>
+                        <div class="col cell" id="T7-Chiều" value ="7"></div>
+                      </div>
+                  </div>
+              </div>
+  
+              <h2 style="color: #333; padding: 20px 0px;">Chú thích</h2>
+              <div class="mau bottom">
+                  <div class="green"></div> <span>Ngày đã đăng ký</span>
+              </div>
+  
+              <div class="mau">
+                  <div class="red"></div> <span>Ngày báo vắng</span>
+              </div>
+              <div class="selectWrapper">
+                <select name="example" class="selectBox" id="baovang">
+                  <option value="T2-Sáng">Thứ 2 - Buổi sáng</option>
+                  <option value="T2-Chiều">Thứ 2 - Buổi chiều</option>
+                  <option value="T3-Sáng">Thứ 3 - Buổi sáng</option>
+                  <option value="T3-Chiều">Thứ 3 - Buổi chiều</option>
+                  <option value="T4-Sáng">Thứ 4 - Buổi sáng</option>
+                  <option value="T4-Chiều">Thứ 4 - Buổi chiều</option>
+                  <option value="T5-Sáng">Thứ 5 - Buổi sáng</option>
+                  <option value="T5-Chiều">Thứ 5 - Buổi chiều</option>
+                  <option value="T6-Sáng">Thứ 6 - Buổi sáng</option>
+                  <option value="T6-Chiều">Thứ 6 - Buổi chiều</option>
+                  <option value="T7-Sáng">Thứ 7 - Buổi sáng</option>
+                </select>
+              </div>
+              <div class="buttonvang" onclick="baoVang()"> Báo vắng</div>
+          </div>
+      </div>
+  </div>
+  
+  
+  
+  <div class="cha col-12">
+    <div class="container col-12 px-0">
+        <div class="schedule-wrapper" style="padding-left: 50px; padding-right: 50px; background-color: #72f3c8; border-radius: 20px;">
+            <h1>Lịch đi sử chuyến đi</h1>
+        <div class="containers">
+            <div class="containers__con containers__con1"><p>Ngày</p></div>
+            <div class="containers__con containers__con2"><p>Giờ</p></div>
+            <div class="containers__con containers__con3"><p>Điểm đón</p></div>
+            <div class="containers__con containers__con4"><p>Điểm trả</p></div>
+            <div class="containers__con containers__con5">Ghi chú</div>
+        </div>
+           
+
+        </div>
+    </div>
+</div>
+    
+
+  </div>
+</div>
+
+<script src="./baovang.js"></script>
+ <script src="./app.js"></script> 
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

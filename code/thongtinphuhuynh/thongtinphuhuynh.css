@@ -1,0 +1,221 @@
+.profile{
+    height: 400px;
+    width: 100%;
+    display: flex;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+
+.profile__profile{
+    height: 100%;
+    width: 30%;
+    /* background: skyblue; */
+    
+}
+.profile__profile2{
+    /* background-color: springgreen; */
+    width: 70%;
+}
+
+.profile__profile-row{
+    height: 580px;
+    width: 80%;
+    margin: auto;
+    background: yellow;
+    margin-top: 30px;
+    border-radius: 20px;
+
+}
+.profile__profile-row h5{
+    text-align: center;
+    margin: auto;
+    border-bottom: 1px solid #333;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: #333;
+}
+.profile__profile-row-img{
+    display: flex;
+    margin-top: 10px;
+}
+.profile__profile-row img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: auto;
+    
+}
+.profile__profile-row-button{
+    height: 60px;
+    width: 70%;
+    border-radius: 40px ;
+    background: #000;
+    margin: auto;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.profile__profile-row-button:hover {
+    background: #555; /* Màu nền khi hover */
+    color:white; /* Màu chữ khi hover */
+}
+.profile__profile-row-con{
+    height: 100%;
+    width: 100%;
+    /* background: red; */
+    display: flex;
+}
+.profile__profile-row-con-con{
+    height: 100%;
+    width: 50%;
+    /* background: springgreen; */
+    color: #333;
+}
+.profile__profile-row-con-con-group input{
+    width: calc(100% - 10px);
+    height: 50px;
+    border-radius: 30px;
+    padding-left: 10px;
+    
+ 
+}
+.profile__profile-row1{
+    height: 330px;
+}
+.profile__profile-row{
+    padding: 0 20px;
+    background-color: #72f3c8;
+    
+}
+
+.table{
+    height: 400px;
+    
+    background: red;
+}
+.green{
+    height: 30px;
+    width: 30px;
+    background: springgreen;
+}
+.red{
+    height: 30px;
+    width: 30px;
+    background: red;
+}
+.mau{
+    display: flex;
+    color: #333;
+}
+.mau .red{
+    margin-right: 10px;
+}
+.mau .green{
+    margin-right: 10px;
+}
+.container{
+  
+    border-radius: 20px;
+    margin: 0;
+}
+    
+
+.container h1{
+    text-align: center;
+    color: #333;
+    padding: 20px 0px;
+}
+
+.cha{
+    
+    width: 100%;
+}
+.bottom{
+    margin-bottom: 10px;
+}
+.containers{
+    height: 400px;
+    width: 90%;
+    /* background: red; */
+    margin: auto;
+    display: flex;
+}
+.containers__con{
+    margin: auto;
+    height: 100%;
+    width: 15%;
+    /* background: blanchedalmond; */
+    text-align: center;
+ 
+    color: #333;
+    border: 1px solid #333;
+}
+.containers__con4{
+    width: 18%;
+}
+.containers__con3{
+    width: 18%;
+}
+.containers__con5{
+    width: 35%;
+
+}
+.containers__con p{
+    width: 100%;
+    background-color: #ccc;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.cha{
+    margin-bottom: 50px;
+    background:#72f3c8;
+    border-radius: 20px;
+}
+
+
+.button{
+    height: 60px;
+    width: 170px;
+    background: #dedcdc;
+    border-radius: 40px;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: 80%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: #a9a9a9; /* Màu nền khi hover */
+    color: white; /* Màu chữ khi hover */
+}
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label {
+    height: 60px;
+    width: 70%;
+    border-radius: 40px ;
+    background: #000;
+    margin: auto;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left:43px
+}
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>them con</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/themcon/themcon.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+   <style>
+    body{
+        background-color: #3bdaa5;
+    }
+    .product-container {
+      position: relative;
+      overflow: hidden;
+      max-width: 300px; /* Điều chỉnh kích thước tối đa của thẻ */
+      height: 300px;
+    }
+    .product-img {
+      width: 100%;
+      height: 250px; /* Chiều cao sản phẩm */
+      object-fit: cover; /* Đảm bảo hình ảnh không bị vùi mất */
+    }
+    .product-button {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Độ mờ của nền */
+      color: white;
+      padding: 10px 0; /* Khoảng cách giữa nút và biên */
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    .product-container:hover .product-button {
+      background-color: rgba(0, 0, 0, 0.8); /* Độ mờ của nền khi rê chuột vào */
+    }
+ 
+    .cell {
+      border: 1px solid #333;
+      color: #333;
+      text-align: center;
+     display: flex;
+     background: #fff;
+     padding: 0;
+    }
+    .cell p{
+      margin: auto;
+      height: 100%;
+      width: 100%;
+      line-height: 100px;
+      padding: 0;
+    }
+    .abc{
+      height: 100px;
+      
+    }
+
+   </style>
+<div class="container-fluid text-light col-11">
+  <div class="row ">
+    <div class="col-md-3">
+      <img src="/img/Screenshot 2024-05-25 142336.png" alt="Logo" class="img-fluid p-3">
+    </div>
+    <div class="col-md-7 text-right">
+      <nav class="navbar navbar-expand-lg navbar-dark mt-3">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="#">Về chúng tôi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="#">Hợp đồng</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="#">Thông tin con</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="#">Hướng dẫn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="#">Thông tin cá nhân</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-white" href="#">Đăng xuất</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    
+    
+    <div class="profile">
+        <div class="profile__profile">
+            <div class="profile__profile-row profile__profile-row1">
+                <h5>Thông tin cá nhân</h5>
+                <div class="profile__profile-row-img">
+                    <img src="/img/profile.png" alt="" id="imagePerson">
+                  
+                </div>
+                <input type="file" name="file" id="file" class="inputfile" />
+                <label for="file">Cập nhật hình ảnh</label>
+            </div>
+        </div>
+        <div class="profile__profile profile__profile2">
+            <div class="profile__profile-row ">
+                <h5>Thông tin</h5>
+                
+                <div class="profile__profile-row-con ">
+                    <div class="profile__profile-row-con-con">
+                        <div class="profile__profile-row-con-con-group">
+                            <p>Họ</p>
+                            <input type="text" id="ho">
+                        </div>
+                        <div class="profile__profile-row-con-con-group">
+                            <p>Giới tính</p>
+                            <input type="text" id="gioitinh" placeholder="Nam hoặc Nữ">
+                        </div>
+                        
+                        <div class="profile__profile-row-con-con-group">
+                            <p>Lớp</p>
+                            <input type="text" id="lop">
+                        </div> 
+                    </div>
+                    <div class="profile__profile-row-con-con">
+                      <div class="profile__profile-row-con-con-group">
+                          <p>Tên</p>
+                          <input type="text" id="ten">
+                      </div>
+                     
+                      <div class="profile__profile-row-con-con-group">
+                          <p>Ngày sinh</p>
+                          <input type="text" id="ngaysinh" placeholder="04/02/2003">
+                      </div>
+                      <div class="profile__profile-row-con-con-group">
+                          <p>Trường</p>
+                          <input type="text" id="truong">
+                      </div>
+                      
+                  </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="button" onclick="luu()">Lưu</div>
+  
+    
+
+  </div>
+</div>
+<script src="./app.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
